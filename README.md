@@ -15,7 +15,6 @@ A multi-strategy ERC4626-compliant vault system for yield optimization on the Ra
 - [Usage](#usage)
 - [Scripts Reference](#scripts-reference)
 - [Architecture](#architecture)
-- [Troubleshooting](#troubleshooting)
 
 ## 🎯 Overview
 
@@ -413,5 +412,6 @@ npm run clean                  # Clean artifacts
    - Deposits into child ERC4626 vaults
    - Production-ready
    - Supports deposit caps, whitelists, pausability
-
-**Built with ❤️ for the Rayls Hackathon**
+  
+     
+## Built with ❤️ for the Rayls Hackathon**
