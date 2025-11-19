@@ -36,7 +36,9 @@
     "verify:contract:rayls": "npx hardhat run script/verifyContract.ts --network rayls",
     "clean": "npx hardhat clean && rm -rf cache artifacts typechain-types",
     "update-weights": "npx hardhat run script/updateWeights.ts",
-    "update-weights:rayls": "npx hardhat run script/updateWeights.ts --network rayls"
+    "update-weights:rayls": "npx hardhat run script/updateWeights.ts --network rayls",
+    "link-strategies": "npx hardhat run script/linkStrategies.ts",
+    "link-strategies:rayls": "npx hardhat run script/linkStrategies.ts --network rayls"
   },
   "repository": {
     "type": "git",

@@ -69,7 +69,7 @@ async function main() {
         const strat = strategies[i];
         
         try {
-            const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+            const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
             const actualBalance = await strategy.getTotalAssets();
             const trackedBalance = strat.currentBalance;
             const targetWeight = Number(strat.targetWeight);
@@ -141,7 +141,7 @@ async function main() {
         const strat = strategies[i];
         
         try {
-            const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+            const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
             const actualBalance = await strategy.getTotalAssets();
             const targetWeight = Number(strat.targetWeight);
             

@@ -165,7 +165,7 @@ async function main() {
     for (let i = 0; i < STRATEGIES_ARRAY.length; i++) {
         console.log(`⏳ Linking strategy ${i + 1}...`);
         try {
-            const strategy = await ethers.getContractAt("MockStrategy", STRATEGIES_ARRAY[i]);
+            const strategy = await ethers.getContractAt("IVaultStrategy", STRATEGIES_ARRAY[i]);
             tx = await strategy.setVault(vaultAddress);
             await tx.wait();
             console.log(`✅ Strategy ${i + 1} linked`);

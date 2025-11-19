@@ -42,6 +42,8 @@ docs/
 
 # Dotenv file
 .env
+.env.local
+frontend/.env.local
 addresses.json
 artifacts
 cache
@@ -51,5 +53,9 @@ package-lock.json
 typechain
 yarn.lock
 script/movement_layerzero_config.json
+
+# Next.js build artifacts
+.next/
+frontend/.next/
 
 lib

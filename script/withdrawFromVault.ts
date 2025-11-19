@@ -143,7 +143,7 @@ async function main() {
     
     for (let i = 0; i < strategies.length; i++) {
         const strat = strategies[i];
-        const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+        const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
         const balance = await strategy.getTotalAssets();
         console.log(`  Strategy ${i + 1}:      ${ethers.formatUnits(balance, 6)} USDC`);
     }
@@ -228,7 +228,7 @@ async function main() {
     
     for (let i = 0; i < strategies.length; i++) {
         const strat = strategies[i];
-        const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+        const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
         const newBalance = await strategy.getTotalAssets();
         console.log(`  Strategy ${i + 1}:      ${ethers.formatUnits(newBalance, 6)} USDC`);
     }

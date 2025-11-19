@@ -64,7 +64,7 @@ async function main() {
     console.log("━".repeat(60));
     for (let i = 0; i < strategies.length; i++) {
         const strat = strategies[i];
-        const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+        const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
         const balance = await strategy.getTotalAssets();
         
         console.log(`Strategy ${i + 1}:`);
@@ -88,7 +88,7 @@ async function main() {
     
     for (let i = 0; i < strategies.length; i++) {
         const strat = strategies[i];
-        const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+        const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
         const currentBalance = await strategy.getTotalAssets();
         
         const targetAmount = (totalAssets * BigInt(strat.targetWeight)) / BigInt(totalWeight);
@@ -164,7 +164,7 @@ async function main() {
     console.log("━".repeat(60));
     for (let i = 0; i < strategies.length; i++) {
         const strat = strategies[i];
-        const strategy = await ethers.getContractAt("MockStrategy", strat.strategy);
+        const strategy = await ethers.getContractAt("IVaultStrategy", strat.strategy);
         const balance = await strategy.getTotalAssets();
         
         console.log(`Strategy ${i + 1}:       ${ethers.formatUnits(balance, 6)} USDC (${(Number(strat.targetWeight)/100).toFixed(2)}%)`);
