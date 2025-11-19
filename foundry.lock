@@ -1,0 +1,20 @@
+{
+  "lib/forge-std": {
+    "rev": "726a6ee5fc8427a0013d6f624e486c9130c0e336"
+  },
+  "lib/morpho-blue": {
+    "rev": "2a98681bff263de8bcfb93e7b043884c5195652e"
+  },
+  "lib/openzeppelin-contracts": {
+    "rev": "c64a1edb67b6e3f4a15cca8909c9482ad33a02b0"
+  },
+  "lib/openzeppelin-contracts-upgradeable": {
+    "rev": "f499af04aeaaf302905595c2e1681230ba596cb0"
+  },
+  "lib/openzeppelin-foundry-upgrades": {
+    "rev": "453d9ff3591cb42f65d2281ea792aded95d7bd8c"
+  },
+  "lib/spectra-core": {
+    "rev": "b267ed946368ebd20abd25b18160b7a602fde307"
+  }
+}

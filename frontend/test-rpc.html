@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RPC Test</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+</head>
+<body>
+    <h1>Testing RPC Connection</h1>
+    <div id="results"></div>
+    
+    <script>
+        const VAULT_ADDRESS = '0xdC2C1f55E51f26099C8031661F735b5b5467dd7E';
+        const RPC_URL = 'https://devnet-rpc.rayls.com';
+        
+        async function test() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing...</p>';
+            
+            try {
+                const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
+                
+                // Test 1: Get block number
+                const blockNumber = await provider.getBlockNumber();
+                results.innerHTML += `<p>✅ Block Number: ${blockNumber}</p>`;
+                
+                // Test 2: Check contract code
+                const code = await provider.getCode(VAULT_ADDRESS);
+                results.innerHTML += `<p>✅ Contract Exists: ${code !== '0x'}</p>`;
+                results.innerHTML += `<p>Code length: ${code.length} bytes</p>`;
+                
+                // Test 3: Try to call totalAssets
+                const vaultABI = ['function totalAssets() view returns (uint256)'];
+                const vault = new ethers.Contract(VAULT_ADDRESS, vaultABI, provider);
+                const totalAssets = await vault.totalAssets();
+                results.innerHTML += `<p>✅ Total Assets: ${ethers.utils.formatEther(totalAssets)}</p>`;
+                
+                // Test 4: Try to call asset
+                const vaultABI2 = ['function asset() view returns (address)'];
+                const vault2 = new ethers.Contract(VAULT_ADDRESS, vaultABI2, provider);
+                const asset = await vault2.asset();
+                results.innerHTML += `<p>✅ Asset Address: ${asset}</p>`;
+                
+                // Test 5: Try getStrategies
+                const vaultABI3 = ['function getStrategies() view returns (tuple(address strategy, uint256 targetWeight, uint256 currentBalance)[])'];
+                const vault3 = new ethers.Contract(VAULT_ADDRESS, vaultABI3, provider);
+                const strategies = await vault3.getStrategies();
+                results.innerHTML += `<p>✅ Strategies Count: ${strategies.length}</p>`;
+                
+                results.innerHTML += '<h2 style="color: green;">All Tests Passed! ✅</h2>';
+                results.innerHTML += '<p>Your vault is working correctly. The frontend should work after clearing cache and restarting.</p>';
+                
+            } catch (error) {
+                results.innerHTML += `<p style="color: red;">❌ Error: ${error.message}</p>`;
+                console.error(error);
+            }
+        }
+        
+        test();
+    </script>
+</body>
+</html>
+

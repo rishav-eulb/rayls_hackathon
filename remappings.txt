@@ -1,0 +1,6 @@
+@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
+@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
+@spectra-core/src=lib/spectra-core/src/
+@pythnetwork/pyth-sdk-solidity/=node_modules/@pythnetwork/pyth-sdk-solidity
+hardhat/=node_modules/hardhat/
+@morpho-blue=lib/morpho-blue

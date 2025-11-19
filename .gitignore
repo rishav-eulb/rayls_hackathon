@@ -1,0 +1,55 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+build/
+deployments/
+
+# Other files and folders
+.settings/
+node_modules/
+.deploys/
+.vscode/
+.aptos/
+extras/
+.DS_Store
+.openzeppelin
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+*.md
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+# Compiler files
+cache/
+out/
+
+# Packages
+node_modules/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Docs
+docs/
+
+# Dotenv file
+.env
+addresses.json
+artifacts
+cache
+cache_hardhat
+.vscode
+package-lock.json
+typechain
+yarn.lock
+script/movement_layerzero_config.json
+
+lib
